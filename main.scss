@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300');
+
+body {
+   background: rgb(147,194,219);
+   background: linear-gradient(45deg, rgba(147,194,219,1) 0%, rgba(131,209,214,1) 100%);
+}
+
+button {
+   font-family: 'Roboto Condensed', sans-serif;
+   border: none;
+   background: white;
+   font-size: 2em;
+   padding: 1em .5em;
+   outline: none;
+   cursor: pointer;
+   transition: all 100ms;
+   
+   &:hover {
+      background: darken(#ececec, 1%);
+   }
+   
+   &:active {
+      background: darken(#ececec, 5%);
+   }
+   
+   &.is-depressed {
+      background: darken(#ececec, 10%);
+   }
+}
+
+.is-pressed {
+   opacity: .9;
+}
+
+.calculator {
+   width: 491px;
+   height: auto;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 18px;
+   font-family: 'Roboto Condensed', sans-serif;
+   
+   &__display {
+      background-color: #212121;
+      color: white;
+      padding: .5em .75em;
+      font-size: 4em;
+      border-radius: .125em .125em 0 0;
+      text-align: right;
+      overflow: hidden;
+   }
+   
+   &__keys {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-gap: 0;
+      background: #3c3c3c;
+      border-radius: 1em;
+      
+      .zero {
+         grid-row: 5 / 6;
+         grid-column: 1 / 3;
+         border-radius: 0 0 0 .25em;
+      }
+      .calculate {
+         grid-row: 3 / 6;
+         grid-column: 4 / 5;
+         background: darken(#f47d58, 5%);;
+         border-radius: 0 0 .25em 0;
+         
+         &:hover {
+            background: darken(#f47d58, 10%);
+         }
+         
+         &:active {
+            background: darken(#f47d58, 15%);
+         }
+      }
+      .clear {
+         grid-row: 2 / 3;
+         grid-column: 4 / 5;
+      }
+   }
+}
